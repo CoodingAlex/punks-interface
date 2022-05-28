@@ -7,6 +7,18 @@
     <title>Vite App</title>
   </head>
   <body>
+    <script>
+      window.global = window;
+    </script>
+    <script type="module">
+      import process from 'process';
+      import { Buffer } from 'buffer';
+      import EventEmitter from 'events';
+
+      window.Buffer = Buffer;
+      window.process = process;
+      window.EventEmitter = EventEmitter;
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
